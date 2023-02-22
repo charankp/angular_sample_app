@@ -1,0 +1,26 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col col-md-5 offset-md-5">
+      <a routerLink="/add" class="btn bg-dark text-light">Add New License Details</a>
+    </div>
+    <br>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+    <div class="col" *ngFor="let cnumber of carNumbers$ | async">
+      <div class="card navbar-dark bg-secondary text-dark">    
+        <div class="card-body">
+           <h5 class="card-title">Car Details</h5><hr>
+          <!-- <ul class="list-group list-group-flush"> -->
+            <li class="list-group-item">Owner Name : {{cnumber.ownerName}}</li>
+            <li class="list-group-item">Car Number : {{cnumber.number}}</li>
+          <!-- </ul> -->
+        </div>
+        <div class="card-body navbar-dark bg-secondary">    
+          <a class="btn btn-dark mr2-1" [routerLink]="['/edit',cnumber.id]">Edit</a>
+          <button type="button" class="btn btn-dark bg-danger m-1" (click)="confirmDelete(cnumber.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

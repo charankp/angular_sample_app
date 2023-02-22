@@ -1,0 +1,18 @@
+<div class="container mt-5 navbar-dark bg-secondary" style="max-width: 650px;">
+  <legend>{{'Update Car Registration Details' | uppercase}}</legend>
+  <form #loginForm="ngForm">
+    <div class="mb-3 mt-3">
+      <label for="txtname" class="form-label mt-4">{{'Owner name' | uppercase}}</label>
+      <input type="text" required #name="ngModel" name="name" class="form-control" id="txtname"
+        [(ngModel)]="carRegForm.ownerName" ngModel>
+      <span *ngIf="name.invalid && name.touched" style="color:red;">Please Enter the Name</span>
+    </div>
+    <div class="mb-3">
+      <label for="txtname" class="form-label">{{'Car Number' | uppercase}}</label>
+      <input type="text" required #number="ngModel" pattern="^[a-zA-Z]{3}\d{3}$" maxlength="6" name="number"
+        class="form-control" id="registrationNumber" [(ngModel)]="carRegForm.number" ngModel>
+      <span *ngIf="number.invalid && number.touched" style="color:red">Please input a value starting with with 3 letters and ending with 3 digits.</span>
+    </div>
+    <button type="button" class="btn btn-dark mb-3" (click)="update()">Update</button>
+  </form>
+</div>
