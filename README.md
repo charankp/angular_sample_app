@@ -1,5 +1,5 @@
 
-This project was generated with Angular version 15.1.0.
+This project was created with Angular version 15.1.0.
 
 Install all the dependency packages by running the command npm install in the project folder.
 
